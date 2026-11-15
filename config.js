@@ -23,7 +23,7 @@ window.VERA_PIXELS = { snap: "", meta: "" };
 })(window.VERA_PIXELS||{});
 
 // أدوات القياس (مجانية): ga4 = معرّف Google Analytics مثل "G-AB12CD34EF"، clarity = معرّف مشروع Microsoft Clarity مثل "abcd123xyz". فاضي = ما تشتغل.
-window.VERA_ANALYTICS = { ga4: "", clarity: "" };
+window.VERA_ANALYTICS = { ga4: "G-720Y8CDGGW", clarity: "ze7n1xptxt" };
 (function(a){
   a.ga4=(a.ga4||"").trim();a.clarity=(a.clarity||"").trim();
   if(/^G-[A-Z0-9]+$/.test(a.ga4)){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+a.ga4;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",a.ga4,{allow_google_signals:false,allow_ad_personalization_signals:false})}
