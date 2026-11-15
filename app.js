@@ -58,6 +58,9 @@
   function track(){var p=window.VERA_PIXELS||{};
     try{if((p.snap||'').trim()&&typeof window.snaptr==='function')window.snaptr('track','SIGN_UP')}catch(e){}
     try{if((p.meta||'').trim()&&typeof window.fbq==='function')window.fbq('track','Lead')}catch(e){}
+    var an=window.VERA_ANALYTICS||{},ls=(src||'').slice(0,100);
+    try{if((an.ga4||'').trim()&&typeof window.gtag==='function')window.gtag('event','generate_lead',{lead_source:ls,ad_code:utm[3]||''})}catch(e){}
+    try{if((an.clarity||'').trim()&&typeof window.clarity==='function'){window.clarity('set','ad_code',utm[3]||ls);window.clarity('event','lead')}}catch(e){}
   }
   var dock=document.querySelector('.dock'),vis={h:true,r:false};
   if(dock && 'IntersectionObserver' in window){
@@ -91,9 +94,13 @@
     }
     var btn=f.querySelector('button');btn.disabled=true;btn.textContent='جارٍ الإرسال…';
     var body=new URLSearchParams(data);
-    fetch(ep,{method:'POST',body:body}).then(function(r){return r.json()}).then(function(j){
+    function post1(){return fetch(ep,{method:'POST',body:body}).then(function(r){return r.json()}).then(function(j){if(!(j&&j.ok))throw new Error('bad');return j})}
+    post1().catch(function(){return new Promise(function(r){setTimeout(r,1500)}).then(post1)}).then(function(j){
       if(j&&j.ok){track();showDone()}else throw new Error('bad');
     }).catch(function(){
+      var bk=window.VERA_BACKUP||{};
+      if(bk.url&&bk.fields&&!f.dataset.bk){f.dataset.bk='1';var fd=new URLSearchParams();Object.keys(bk.fields).forEach(function(k){if(bk.fields[k]&&data[k])fd.append(bk.fields[k],data[k])});
+        fetch(bk.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){track();showDone()}).catch(function(){btn.disabled=false;btn.textContent='إرسال التسجيل';fail('تعذّر الإرسال، اضغط «إرسال التسجيل» مرة ثانية.')});return}
       btn.disabled=false;btn.textContent='إرسال التسجيل';
       fail('تعذّر الإرسال، حاول مرة أخرى أو أرسل التسجيل عبر واتساب:');
       var wt='تسجيل اهتمام - برج ڤيرا للأعمال\nالاسم: '+data.name+'\nالجوال: '+data.phone+(data.email?'\nالبريد: '+data.email:'')+'\nالمساحة: '+data.area+'\nالمصدر: '+data.source;
