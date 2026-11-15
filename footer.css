@@ -1,0 +1,22 @@
+/* ===== Footer (Marwan 15 Nov: complete info, «شركة دار العز للعقار», tidy) ===== */
+.foot5{background:#14110e;color:rgba(255,248,236,.78);font-size:.92rem;line-height:1.8;padding:48px 0 calc(96px + env(safe-area-inset-bottom))}
+.foot5-grid{display:grid;gap:30px}
+.foot5-brand{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.foot5-brand img{height:72px;width:auto;margin-bottom:6px}
+.foot5-brand b{color:#fff8ec;font-size:1.08rem;font-weight:700}
+.foot5-brand span{color:rgba(255,248,236,.6);font-size:.86rem}
+.foot5-col h2{margin:0 0 10px;font-size:1rem;font-weight:700;color:#e8cb92;letter-spacing:0}
+.foot5-col ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.foot5-col li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.foot5-col li span{color:rgba(255,248,236,.6);min-width:92px}
+.foot5 a{color:#fff8ec}
+.foot5 a:hover{color:#e8cb92}
+.foot5 a:focus-visible{outline:2px solid #e8cb92;outline-offset:3px}
+.foot5-wa{display:inline-flex;align-items:center;margin-top:14px;padding:8px 18px;border-radius:999px;border:1px solid rgba(232,203,146,.55);font-weight:600;font-size:.9rem}
+.foot5-base{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,248,236,.12);font-size:.8rem;color:rgba(255,248,236,.55)}
+.foot5-base [data-license]:empty{display:none}
+@media (min-width:860px){
+  .foot5{padding:64px 0 40px}
+  .foot5-grid{grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
+  .foot5-brand img{height:88px}
+}
