@@ -55,3 +55,11 @@
     font-family:var(--font-display);font-weight:600;font-size:clamp(18px,1.6vw,24px);color:#fff8ec;letter-spacing:0;text-shadow:0 2px 14px rgba(0,0,0,.55)}
   .hero-note{left:auto;right:16px;bottom:10px;text-align:right;font-size:.72rem}
 }
+/* 16 Nov QA: gallery hole on desktop (3 "big" tiles left one empty cell) — only the first and the last tile stay big from 768px */
+@media (min-width:768px){.mosaic figure.big:not(:first-child):not(:last-child){grid-column:auto;grid-row:auto}
+  .mosaic figure.big:not(:first-child):not(:last-child) img{aspect-ratio:4/3}}
+/* 16 Nov (GrokBot): 320px phones — header overflowed by ~30px */
+@media (max-width:359px){.bar{padding:0 8px}.mark-s{display:none}.bar-icons{gap:2px}.bar-icons>a:not(.bar-cta){width:30px}
+  .bar-cta{padding:6px 10px;font-size:.8rem;margin-inline-start:2px}.hero-brand5{right:8px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div{padding:16px 6px}.stats b{font-size:1.45rem}}
+.band-copy p{color:#fff8ec}.band-copy p svg{color:var(--sand)}
