@@ -63,3 +63,35 @@
   .bar-cta{padding:6px 10px;font-size:.8rem;margin-inline-start:2px}.hero-brand5{right:8px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div{padding:16px 6px}.stats b{font-size:1.45rem}}
 .band-copy p{color:#fff8ec}.band-copy p svg{color:var(--sand)}
+
+/* ===== ROI opening (Marwan 17 Nov, option «2 + depth»; ROI wording is the client's decision, Marwan informed of the regulation risk) =====
+   Name with a light kashida and deep shadow, location with a pin, short gold rule, ROI line + small tagline aligned LEFT,
+   dark shading rising from the bottom of the photo. Plex only. */
+.hero.v5::after{display:block;content:"";position:absolute;inset:auto 0 0 0;top:auto;left:0;right:0;bottom:0;height:58%;z-index:1;pointer-events:none;
+  background:linear-gradient(to top,rgba(14,11,8,.9) 0%,rgba(14,11,8,.6) 28%,rgba(14,11,8,.2) 62%,rgba(14,11,8,0) 100%)}
+.hero.v5{--sky:max(0px,calc(424px - 41.2svh))} /* taller copy block: crown must start below ~300px */
+@media (max-width:759px){.hero.v5 .hero-bg{object-position:50% 0}} /* anchor at the top so the crown position never depends on the crop */
+.hero.v5 .hero-stack.roi5{left:16px;right:16px;max-width:none;align-items:stretch;z-index:2}
+.hero-stack.roi5 h1{font-size:clamp(32px,10vw,40px);font-weight:500;line-height:1.15;
+  text-shadow:0 1px 0 rgba(0,0,0,.25),0 6px 22px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.35)}
+.hero-stack.roi5 h1 span{font-weight:700;color:var(--gold)}
+.hero-stack.roi5 .hero-loc{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:.88rem;font-weight:400}
+.hero-stack.roi5 .hero-loc svg{width:16px;height:16px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.roi5-blk{display:flex;flex-direction:column;align-items:flex-end;text-align:left}
+.roi5-blk .hero-rule{width:44px;height:2px;margin:20px 0 12px;background:var(--gold);border-radius:2px}
+.roi5-line{margin:0;font-size:1.1rem;font-weight:500;line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.roi5-line b{display:inline-block;margin-right:12px;font-size:2.9rem;font-weight:700;line-height:1;color:var(--gold);vertical-align:-.3em;unicode-bidi:isolate}
+.roi5-op{margin:8px 0 0;font-size:.86rem;font-weight:300;color:rgba(255,248,236,.92);text-shadow:0 2px 10px rgba(0,0,0,.5)}
+@media (max-height:720px) and (max-width:759px),(max-width:759px) and (min-aspect-ratio:11/20){
+  .hero.v5{--sky:max(0px,calc(349px - 41.2svh))}.hero.v5 .hero-stack.roi5{top:84px}.hero-stack.roi5 h1{font-size:30px}.roi5-blk .hero-rule{margin:12px 0 8px}
+  .roi5-line{font-size:.95rem}.roi5-line b{font-size:2.2rem}.roi5-op{margin-top:4px;font-size:.8rem}}
+@media (min-width:760px){
+  .hero.v5 .hero-stack.roi5{left:auto;right:max(40px,23vw);align-items:stretch}
+  .hero-stack.roi5 h1{font-size:clamp(44px,4.6vw,72px)}
+  .hero-stack.roi5 .hero-loc{font-size:1.1rem;margin-top:10px}
+  .hero-stack.roi5 .hero-loc svg{width:20px;height:20px}
+  .roi5-blk .hero-rule{width:64px;margin:26px 0 16px}
+  .roi5-line{font-size:1.35rem}.roi5-line b{font-size:clamp(48px,4.4vw,68px)}
+  .roi5-op{font-size:1.02rem}
+  .hero-stack.roi5 .hero-cta{align-self:flex-start;margin-top:26px}
+}
