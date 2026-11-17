@@ -1,0 +1,12 @@
+/* Pair 1: Cairo 800 headline + IBM Plex Sans Arabic 400/500 secondary */
+:root{--font-display:"Cairo","IBM Plex Sans Arabic",system-ui,sans-serif;--font-text:"IBM Plex Sans Arabic",system-ui,sans-serif}
+body{font-family:var(--font-text)}
+h2{font-family:var(--font-display)}
+.hero.v5 h1,.hero-stack.roi5 h1{font-family:var(--font-display);font-weight:800;letter-spacing:0}
+.hero-stack.roi5 h1 span{font-weight:800}
+.hero-stack.roi5 .hero-loc{font-family:var(--font-text);font-weight:400;letter-spacing:0}
+.roi5-line{font-family:var(--font-text);font-weight:500;letter-spacing:0}
+.roi5-line b{font-family:var(--font-text);font-weight:700;letter-spacing:0}
+.roi5-op{font-family:var(--font-text);font-weight:400;letter-spacing:0}
+.hero-brand5{font-family:var(--font-text);letter-spacing:0}
+.hero-tag{font-family:var(--font-text);letter-spacing:0}
